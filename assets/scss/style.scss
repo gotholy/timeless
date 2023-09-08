@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Ostrich;
+  src: url("../fonts/OstrichSans-Light.otf");
+}
+@font-face {
+  font-family: Inter;
+  src: url("../fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+// Variablen & Mixin
+@mixin my-text($c, $fs, $ff, $ls, $fw) {
+  color: $c;
+  font-size: $fs;
+  font-family: $ff;
+  letter-spacing: $ls;
+  font-weight: $fw;
+}
+
+$bgg: #1a1a1a;
+$bgb: #121212;
+$c: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: Inter, Helvetica, sans-serif;
+}
+img {
+  max-width: 100%;
+}
+h1 {
+  @include my-text($c, clamp(30px, 6rem, 8rem), Inter, 6rem, 100);
+}
+h2 {
+  @include my-text($c, 3.3rem, Inter, 1rem, 100);
+}
+.buttonstyle {
+  text-decoration: none;
+  @include my-text($c, 1.6rem, Helvetica, 0.5rem, 300);
+  &:hover {
+    scale: 1.2;
+  }
+}
+// ========================== HEADER ==================== //
+header {
+  background-image: url("../img/FJ_home_slider2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+  padding-top: 75vh;
+}
+// ============================ MAIN =================== //
+main {
+  text-align: center;
+  position: relative;
+  .logo {
+    position: absolute;
+    top: 5vh;
+    left: 3vw;
+  }
+  .section-experience {
+    height: 100vh;
+    background-color: $bgg;
+    color: $c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin-top: -10vh;
+      font-size: 1.3rem;
+      font-weight: 100;
+      margin-bottom: 10vh;
+    }
+    div {
+      height: 50vh;
+      width: 100vw;
+      background-image: url("../img/6a1f1689481903.5df65ad917545@2x.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto 30vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      margin-bottom: 0.5vh;
+      h2 {
+        margin-bottom: 30vh;
+      }
+    }
+    .divline {
+      height: 1px;
+      background: none;
+      background-color: #fff;
+      position: absolute;
+      z-index: 0;
+    }
+  }
+}
